@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>会议登录</title>
+</head>
+<body role="document">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/event_manage/">嘉宾签到系统</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main" style="padding-top: 32px;">
+
+        <h2>主持人登录</h2>
+        <form method="post" action="/login_action/">
+        主持人:<input name="username" type="text" placeholder="username"><br>
+        密  码:<input name="password" type="password" placeholder="password"><br>
+        {{ error }}<br>
+        <button id="btn" type="submit">登录</button>
+        {% csrf_token %}
+    </form>
+    </div>
+</body>
+</html>
